@@ -26,11 +26,12 @@
 </div>
 
 <h2>Mock Comments</h2>
+<input class="form-control" type="text" placeholder="Enter repo" [(ngModel)]="repoName" maxlength="256" value="">
 <button class="btn btn-dark" (click)="toggleComments()">
   Click for comments
 </button>
 
-<div [hidden] = "isHidden" *ngFor="let comment of comments">
+<!-- <div [hidden] = "isHidden" *ngFor="let comment of comments">
     <div><span>id: </span>{{ comment.id }}</div>
     <div><span>status: </span>{{ comment.status }}</div>
     <div><span>created at: </span>{{ comment.created }}</div>
@@ -38,5 +39,5 @@
     <div><span>body: </span>{{ comment.body }}</div>
     <div><span>url: </span>{{ comment.link }}</div>
     <hr style="border-top: dotted 1px;" />
-</div>
+</div> -->
 

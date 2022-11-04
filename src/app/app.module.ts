@@ -1,22 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatTableModule} from '@angular/material/table';
-
+import { MatTableModule } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashbaordComponent } from './dashbaord/dashbaord.component';
+import { ApiService } from './shared/services/api.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashbaordComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatTableModule,
+	FormsModule,
+	HttpClientModule,
   ],
-  providers: [],
+  providers: [
+	ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
