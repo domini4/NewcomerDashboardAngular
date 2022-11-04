@@ -1,14 +1,13 @@
-import { Component, ViewChild, OnInit, ErrorHandler } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-
-import { Comments } from '../comments';
 import { isNil } from 'lodash';
 import { ApiService } from '../shared/services/api.service';
 import { Subject, takeUntil } from 'rxjs';
 import { DemoComment } from '../shared/models/demo-comment.model';
 import { ErrorHandlerModel } from '../shared/models/error-handler.model';
+import { MockCommentsList } from '../shared/models/mock-comments.model';
 
 
 @Component({
@@ -25,7 +24,7 @@ export class DashboardComponent implements OnInit {
 
   public isHidden: boolean = true;
   public displayedColumns: string[] = ['id', 'status', 'created', 'user', 'body', 'link'];
-  public dataSource!: MatTableDataSource<Comments>;
+  public dataSource!: MatTableDataSource<DemoComment>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -63,11 +62,12 @@ export class DashboardComponent implements OnInit {
 	this.apiService.getAndSaveCommentsByRepoName(repoName).pipe(
 		takeUntil(this.subscription$),
 	).subscribe({
-		next: (demoComments: Array<DemoComment>) => {
+		next: (demoComments: any) => {
+			this.isRequestInProgress = false;
 			debugger;
 			console.log('Got a response back, the comments were saved successfully.');
 			// The response returns a list of comments.
-			this.searchListDemoComments = demoComments;
+			this.searchListDemoComments = JSON.parse(MockCommentsList.COMMENTS_JSON_RESPONSE_DATA);
 			
 		},
 		error: (error) => {

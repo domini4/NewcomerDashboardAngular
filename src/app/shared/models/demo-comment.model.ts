@@ -1,5 +1,5 @@
 export interface DemoComment {
-	// This intferace models the DemoComment from the DynamoDB table `democomments`.
+	// This interface models the DemoComment from the DynamoDB table `democomments`.
 	id: string;
 	author_association: string;
 	classification: number;
@@ -12,4 +12,6 @@ export interface DemoComment {
 	user_id: number;
 	user_login: string;
 	user_type: string;
+	body: string;
+	issue_url: string;
 }

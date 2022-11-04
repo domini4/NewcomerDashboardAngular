@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api_gateway: {
-	url: 'https://wioyzq38s8.execute-api.us-east-1.amazonaws.com/dev',
+	url: 'https://wioyzq38s8.execute-api.us-east-1.amazonaws.com/bt-test-stage',
 	get_and_save_comments_from_repo_endpoint: '/get-and-save-comments-from-repo',
   }
 };

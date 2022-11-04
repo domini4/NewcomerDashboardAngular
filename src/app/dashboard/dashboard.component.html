@@ -26,10 +26,16 @@
 </div>
 
 <h2>Mock Comments</h2>
-<input class="form-control" type="text" placeholder="Enter repo" [(ngModel)]="repoName" maxlength="256" value="">
-<button class="btn btn-dark" (click)="toggleComments()">
-  Click for comments
-</button>
+<div *ngIf="!isRequestInProgress">
+	<input class="form-control" type="text" placeholder="Enter repo" [(ngModel)]="repoName" maxlength="256" value="">
+	<button class="btn btn-dark" (click)="toggleComments()">
+	Click for comments
+	</button>
+</div>
+<div *ngIf="isRequestInProgress">
+	<span class="loader"></span>
+</div>
+
 
 <!-- <div [hidden] = "isHidden" *ngFor="let comment of comments">
     <div><span>id: </span>{{ comment.id }}</div>

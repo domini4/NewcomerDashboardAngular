@@ -25,9 +25,9 @@ export class ApiService {
 
 		return this.http.post<any>(environment.api_gateway.url + '/get-and-save-comments-from-repo', payload)
 			.pipe(
-				map((response: string) => {
+				map((response: any) => {
 					debugger;
-					return response;
+					return JSON.parse(response.body);
 				}));
 	}
 }
