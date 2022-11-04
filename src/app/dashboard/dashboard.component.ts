@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit {
 			debugger;
 			console.log('Got a response back, the comments were saved successfully.');
 			// The response returns a list of comments.
-			this.searchListDemoComments = JSON.parse(MockCommentsList.COMMENTS_JSON_RESPONSE_DATA);
+			this.searchListDemoComments = demoComments;
 			
 		},
 		error: (error) => {

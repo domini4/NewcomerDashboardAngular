@@ -27,7 +27,8 @@
 
 <h2>Mock Comments</h2>
 <div *ngIf="!isRequestInProgress">
-	<input class="form-control" type="text" placeholder="Enter repo" [(ngModel)]="repoName" maxlength="256" value="">
+	<input class="form-control" type="text" placeholder="Enter Repository Name" [(ngModel)]="repoName" maxlength="256" value="">
+	<br>
 	<button class="btn btn-dark" (click)="toggleComments()">
 	Click for comments
 	</button>
