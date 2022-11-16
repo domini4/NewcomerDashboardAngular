@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashbaordComponent } from './dashbaord.component';
+import { C9tableComponent } from './c9table.component';
 
-describe('DashbaordComponent', () => {
-  let component: DashbaordComponent;
-  let fixture: ComponentFixture<DashbaordComponent>;
+describe('C9tableComponent', () => {
+  let component: C9tableComponent;
+  let fixture: ComponentFixture<C9tableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashbaordComponent ]
+      declarations: [ C9tableComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DashbaordComponent);
+    fixture = TestBed.createComponent(C9tableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

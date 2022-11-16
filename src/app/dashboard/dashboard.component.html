@@ -1,0 +1,356 @@
+<div class="container mt-3">
+    <h4>How to use this dashboard:</h4>
+    <ol>
+            <li>The <b># of Total Comments</b> chart shows open newcomer comment distribution among various classes.</li>
+            <li>Below listed is the <b>detailed view</b>. Press the down arrow on the right side of each class to view all open comments.</li>
+            <ul>
+                    <p><b>Show a gif?</b></p>
+            </ul>
+            <li>What does each status mean?</li>
+            <ul>
+                    <li><b>Open</b>&emsp; - Newcomer comment that required attention. The issue is still open.</li>
+                    <li><b>Replied</b> - Newcomer comment with replies after the comment. The issue is still open.</li>
+                    <li><b>Closed</b>&nbsp; - Newcomer comment. The issue is closed.</li>
+            </ul>
+            <li>Scroll to the bottom of this page to view a comment classification dictionary with examples.</li>
+    </ol>
+    <!-- <p>The <b># of Total Comments</b> chart shows open newcomer comment distribution amoung various classes.</p>
+    <p>Below listed are the comment classes. Press the down arrow on the right side of each class to view all open comments.</p>
+    <p>What does each status mean?</p>
+    <p>Open&emsp; - Newcomer comment that required attention. Issue is still open.</p>
+    <p>Replied - Newcomer comment with replies after the comment. Issue is still open.</p>
+    <p>Closed&nbsp; - Newcomer comment. Issue is cloased.</p> -->
+  <!-- {% for comment in comments %}
+    <p><a href="/detailed" class="btn btn-primary">{{ comment.name }}: {{ comment.count }}</a></p>
+  {% endfor %} -->
+  </div>
+
+
+<!-- <div *ngFor="let date of dataarr">
+    <div><span>id: </span>{{ data.id }}</div>
+    <div><span>status: </span>{{ data.status }}</div>
+    <div><span>created at: </span>{{ data.created }}</div>
+    <div><span>user: </span>{{ data.user }}</div>
+    <div><span>body: </span>{{ data.body }}</div>
+    <div><span>url: </span>{{ data.link }}</div>
+    <hr style="border-top: dotted 1px;" />
+</div> -->
+<!-- 
+  <h2>Mock Comments</h2>
+  <button class="btn btn-dark" (click)="toggleComments()">
+    Click for comments
+  </button>
+  
+  <div [hidden] = "isHidden" *ngFor="let comment of comments">
+      <div><span>id: </span>{{ comment.id }}</div>
+      <div><span>status: </span>{{ comment.status }}</div>
+      <div><span>created at: </span>{{ comment.created }}</div>
+      <div><span>user: </span>{{ comment.user }}</div>
+      <div><span>body: </span>{{ comment.body }}</div>
+      <div><span>url: </span>{{ comment.link }}</div>
+      <hr style="border-top: dotted 1px;" />
+  </div>
+   -->
+
+  <!--Start tabs-->
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Zulip/Zulip">
+      <!--Start mat accordion-->
+      <div class="control-all-buttons">
+        <button mat-button (click)="accordion.openAll()">Expand All</button>
+        <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+      </div>
+
+      <mat-accordion class="display-comments" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Newcomer Assignment Request
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c1table>      
+          </app-c1table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Starting Guidance Request
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c2table>      
+          </app-c2table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Coordination Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c3table>      
+          </app-c3table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Issue Status Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c4table>      
+          </app-c4table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Submission Process Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c5table>      
+          </app-c5table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Technical Related Question
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c6table>      
+          </app-c6table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Resource Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c7table>      
+          </app-c7table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Knowledge Share
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c8table>      
+          </app-c8table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              General Statement
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c9table [repo]="currentrepo"></app-c9table>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <!--End mat accordion-->
+    </mat-tab>
+    <mat-tab label="vercel/next.js">
+      <!--Start mat accordion-->
+      <div class="control-all-buttons">
+        <button mat-button (click)="accordion.openAll()">Expand All</button>
+        <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+      </div>
+
+      <mat-accordion class="display-comments" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Newcomer Assignment Request
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c1table>      
+          </app-c1table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Starting Guidance Request
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c2table>      
+          </app-c2table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Coordination Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c3table>      
+          </app-c3table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Issue Status Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c4table>      
+          </app-c4table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Submission Process Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c5table>      
+          </app-c5table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Technical Related Question
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c6table>      
+          </app-c6table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Resource Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c7table>      
+          </app-c7table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Knowledge Share
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c8table>      
+          </app-c8table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              General Statement
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c9table [repo]="currentrepo"></app-c9table>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <!--End mat accordion-->
+    </mat-tab>
+    <mat-tab label="diasurgical/devilutionX">
+      <!--Start mat accordion-->
+      <div class="control-all-buttons">
+        <button mat-button (click)="accordion.openAll()">Expand All</button>
+        <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+      </div>
+
+      <mat-accordion class="display-comments" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Newcomer Assignment Request
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c1table>      
+          </app-c1table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Starting Guidance Request
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c2table>      
+          </app-c2table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Coordination Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c3table>      
+          </app-c3table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Issue Status Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c4table>      
+          </app-c4table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Submission Process Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c5table>      
+          </app-c5table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Technical Related Question
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c6table>      
+          </app-c6table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Resource Inquiry
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c7table>      
+          </app-c7table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Knowledge Share
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c8table>      
+          </app-c8table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              General Statement
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-c9table [repo]="currentrepo"></app-c9table>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <!--End mat accordion-->
+    </mat-tab>
+  </mat-tab-group>
+  <!--End tabs-->
+  
