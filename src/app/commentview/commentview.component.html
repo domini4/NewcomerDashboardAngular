@@ -1,0 +1,100 @@
+<div *ngIf="repo">
+    <!--Start mat accordion-->
+    <!-- <div class="control-all-buttons">
+        <button mat-button (click)="accordion.openAll()">Expand All</button>
+        <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+    </div> -->
+
+    <mat-accordion class="display-comments" multi>
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Newcomer Assignment Request
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c1table [repo]=repo>      
+        </app-c1table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Starting Guidance Request
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c2table [repo]=repo>      
+        </app-c2table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Coordination Inquiry
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c3table [repo]=repo>      
+        </app-c3table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Issue Status Inquiry
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c4table [repo]=repo>      
+        </app-c4table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Submission Process Inquiry
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c5table [repo]=repo>      
+        </app-c5table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Technical Related Question
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c6table [repo]=repo>      
+        </app-c6table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Resource Inquiry
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c7table [repo]=repo>      
+        </app-c7table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Knowledge Share
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c8table [repo]=repo>      
+        </app-c8table>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            General Statement
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-c9table [repo]=repo>
+        </app-c9table>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <!--End mat accordion-->
+</div>

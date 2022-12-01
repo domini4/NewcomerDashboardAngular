@@ -1,12 +1,5 @@
-import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
-import { MatAccordion } from "@angular/material/expansion";
-
-import { Comments } from '../comments';
-import { COMMENTS } from '../mock-comments'
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 
 @Component({
@@ -17,25 +10,27 @@ import { COMMENTS } from '../mock-comments'
 
 export class DashboardComponent implements OnInit {
 
-  isHidden = true;
 
-  comments = COMMENTS;
+  checkoutForm = this.formBuilder.group({
+    user: ''
+  });
 
-  currentrepo = 'zulip/zulip';
+  user !: FormGroup;
+  username = '';
 
+  constructor(
+    private formBuilder: FormBuilder,
+  ){}
+  
   ngOnInit(): void {
   }
-
-  toggleComments(){
-    this.isHidden = !this.isHidden;
+  
+  onSubmit(): void {
+    // console.log(this.checkoutForm.value);
+    // console.log(this.checkoutForm.controls['user'].value);
+    this.user = this.checkoutForm;
+    this.username = this.user.controls['user'].value
+    this.checkoutForm.reset();
   }
-
-  // displayedColumns: string[] = ['id', 'status', 'created', 'user', 'body', 'link'];
-  // dataSource!: MatTableDataSource<Comments>;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatAccordion) accordion!: MatAccordion;
-
 
 }

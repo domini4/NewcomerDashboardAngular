@@ -1,0 +1,49 @@
+<div *ngIf="user" class="user-instructions">
+  <h4>&emsp;How to use this dashboard:</h4>
+  <ol>
+          <!-- <li>The <b># of Total Comments</b> chart shows open newcomer comment distribution among various classes.</li> -->
+          <li>Below listed is the <b>detailed view</b>. Press the down arrow on the right side of each class to view all open comments.</li>
+          <!-- <ul>
+                  <p><b>Show a gif?</b></p>
+          </ul> -->
+          <li>What does each status mean?</li>
+          <ul>
+                  <li><b>Open</b>&emsp; - Newcomer comment with no replies after the comment. The issue is still open.</li>
+                  <li><b>Replied by you</b> - Newcomer comment with replies from you after the comment. The issue is still open.</li>
+                  <li><b>Replied by other</b>&nbsp; - Newcomer comment with replies from others, but not you after the comment. The issue is still open.</li>
+          </ul>
+          <!-- <li>Scroll to the bottom of this page to view a comment classification dictionary with examples.</li> -->
+  </ol>
+  <!-- <p>The <b># of Total Comments</b> chart shows open newcomer comment distribution amoung various classes.</p>
+  <p>Below listed are the comment classes. Press the down arrow on the right side of each class to view all open comments.</p>
+  <p>What does each status mean?</p>
+  <p>Open&emsp; - Newcomer comment that required attention. Issue is still open.</p>
+  <p>Replied - Newcomer comment with replies after the comment. Issue is still open.</p>
+  <p>Closed&nbsp; - Newcomer comment. Issue is cloased.</p> -->
+<!-- {% for comment in comments %}
+  <p><a href="/detailed" class="btn btn-primary">{{ comment.name }}: {{ comment.count }}</a></p>
+{% endfor %} -->
+</div>
+
+<!-- <h2>Click on Repository</h2>
+<ul class="repos">
+  <div *ngFor="let repoassignment of repoassignments">
+    <li *ngIf="repoassignment.user == user">
+      <button [class.selected]="repoassignment === selectedRepo" type="button" (click)="onSelect(repoassignment)">
+        <span class="badge">{{ repoassignment.user }}</span>
+         <span class="name">{{ repoassignment.repo }}</span>
+      </button>
+    </li>
+  </div>
+</ul>
+<app-commentview [repo]="selectedRepo"></app-commentview> -->
+
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" (selectedTabChange)="onSelectedTab($event)">
+    <div *ngFor="let repoassignment of repoassignments">
+        <div *ngIf="repoassignment.user == user">
+            <mat-tab label= {{repoassignment.repo}}>
+                <app-commentview [repo]="tabRepo"></app-commentview>
+            </mat-tab>
+        </div>
+    </div>
+</mat-tab-group>

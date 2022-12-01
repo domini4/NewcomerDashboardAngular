@@ -9,6 +9,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatButtonModule } from "@angular/material/button";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatTabsModule } from "@angular/material/tabs";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +27,9 @@ import { C6tableComponent } from './c6table/c6table.component';
 import { C7tableComponent } from './c7table/c7table.component';
 import { C8tableComponent } from './c8table/c8table.component';
 import { C9tableComponent } from './c9table/c9table.component';
+import { CommentviewComponent } from './commentview/commentview.component';
+import { RepoviewComponent } from './repoview/repoview.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,9 @@ import { C9tableComponent } from './c9table/c9table.component';
     C6tableComponent,
     C7tableComponent,
     C8tableComponent,
-    C9tableComponent
+    C9tableComponent,
+    CommentviewComponent,
+    RepoviewComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +59,13 @@ import { C9tableComponent } from './c9table/c9table.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    FontAwesomeModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

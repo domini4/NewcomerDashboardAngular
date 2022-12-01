@@ -1,0 +1,5 @@
+.mat-tab-label.mat-tab-label-active {
+    /* color: white; */
+    background-color: rgba(54, 162, 235, 0.2);
+    opacity: 1.0;
+}

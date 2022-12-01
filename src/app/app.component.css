@@ -1,0 +1,10 @@
+.center {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+body {
+    background-color: rgba(54, 162, 235, 0.01);
+  }
+

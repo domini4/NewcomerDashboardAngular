@@ -1,0 +1,15 @@
+mat-accordion{
+    width: 80%;
+}
+
+.mat-expansion-panel-header.mat-expanded,
+.mat-expansion-panel-header.mat-expanded:hover,
+.mat-expansion-panel-header.mat-expanded:focus {
+    background-color: rgba(54, 162, 235, 0.2);
+}
+
+.mat-expansion-panel-header-title {
+    color: black;
+    font-weight: bold;
+  }
+
